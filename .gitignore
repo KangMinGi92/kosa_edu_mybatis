@@ -1,0 +1,56 @@
+# === OS 관련 임시 파일 ===
+.DS_Store
+Thumbs.db
+
+# === Eclipse/IDEA 설정 파일 ===
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# === 빌드 산출물 ===
+/bin/
+/target/
+/build/
+
+# === Maven / Gradle ===
+/.mvn/
+/.gradle/
+!gradle-wrapper.jar
+/build/
+/out/
+/dependency-reduced-pom.xml
+*.log
+
+# === Java 패키징 파일 ===
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# === 컴파일 산출물 ===
+*.class
+*.swp
+*.tmp
+
+# === JetBrains (IntelliJ IDEA) ===
+.idea/
+
+# === Tomcat 서버 설정 ===
+/Servers/
+server.xml
+
+# === 로그 및 오류 덤프 ===
+*.log
+hs_err_pid*
+replay_pid*
+
+# === 기타 ===
+/.metadata/
+*.tmp
+*.bak
+*.old
