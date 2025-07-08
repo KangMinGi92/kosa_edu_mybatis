@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+												 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+		
+		<bean id="diceA" class="spring.service.dice.impl.DiceAImpl"/>
+		<bean id="diceB" class="spring.service.dice.impl.DiceBImpl"/>
+		<bean id="diceC" class="spring.service.dice.impl.DiceCImpl"/>	
+		<bean id="diceD" class="spring.service.dice.impl.DiceDImpl"/>			
+		<!--player01 이름으로 빈을 생성(Player02) | DiceAImpl주입 | 생성자-->
+		<bean id="player01" class="spring.service.dice.play.Player02">
+			<constructor-arg ref="diceA"/>
+		</bean>
+		
+		<!--player02 이름으로 빈을 생성(Player02) | DiceBImpl주입 | 생성자-->
+		<bean id="player02" class="spring.service.dice.play.Player02">
+			<constructor-arg ref="diceB"/>
+		</bean>
+		
+		<!--player03 이름으로 빈을 생성(Player02) | DiceCImpl주입 | setter-->
+		<bean id="player03" class="spring.service.dice.play.Player02">
+			<property name="dice" ref="diceC"/>
+		</bean>
+		
+		<!--player04 이름으로 빈을 생성(Player02) | DiceAImpl주입 | setter-->
+		<bean id="player04" class="spring.service.dice.play.Player02">
+			<property name="dice" ref="diceA"/>
+		</bean>
+		
+		<!--player05 이름으로 빈을 생성(Player02) | DiceDImpl주입 | 생성자-->
+		<bean id="player05" class="spring.service.dice.play.Player02">
+			<constructor-arg ref="diceD"/>
+		</bean>
+</beans>
