@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- sql query문을 모듈화  -->
+<mapper namespace="SawonMapper">
+<insert id="sawonAdd" parameterType="mySawon"> <!--mySawon은 sqlMapConfig에 등록한 alias를 불러온것  -->
+		INSERT INTO mysawon (id, pwd, name, age, hiredate) VALUES(#{id},#{pwd},#{name},#{age},curdate())
+</insert>
+<select id="sawonList" resultType="mySawon">
+		SELECT num, id, name, age, hiredate 
+		FROM mysawon 
+		ORDER BY num DESC
+</select>
+<delete id="sawonDelete" parameterType="int">
+		DELETE FROM mysawon WHERE num=#{VALUE}
+</delete>
+<!-- 특정한 num에 해당하는 사원의 정보를 변경 
+		이름을 Tomas age 33변경
+-->
+<update id="sawonUpdate" parameterType="mySawon">
+	UPDATE mysawon SET name=#{name}, age=#{age} WHERE num=#{num}  
+</update>
+</mapper>
