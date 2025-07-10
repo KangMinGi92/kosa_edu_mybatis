@@ -4,12 +4,20 @@
 	
 <!-- SQL definition -->
 <mapper namespace="UserMapper01">
-<!-- 컬럼명이랑 필드명이 다르면 user 안담긴다...As를 이용해서 Alias를 사용  -->
+<!-- parameterType | resultType  -->
+
+<!-- user_id가 "user01"인 사람을 검색
+	User getUser("user01")
+ -->
 <select id="getUser" parameterType="string" resultType="user">
 	SELECT user_id As userId, user_name AS userName, password, age, grade, reg_date
 	FROM users
 	WHERE user_id=#{VALUE}
 </select>
+
+<!-- 아이디가 "user03" 패스워드가 "user03"인 사람의 이름을 검색 
+	String findUserId(user)
+-->
 <select id="findUserId" parameterType="user" resultType="string">
 	SELECT user_name
 	FROM users

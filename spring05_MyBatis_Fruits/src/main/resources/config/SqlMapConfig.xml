@@ -17,7 +17,7 @@
 
 <!--2. vo information wiring -->
 <typeAliases>
-	<typeAlias type="mybatis.services.domain.User" alias="user"/>
+	<typeAlias type="com.service.spring.domain.Item" alias="item"/>
 </typeAliases>
 
 <environments default="aa">
@@ -33,13 +33,6 @@
 </environments>
 
 <mappers>
-	<mapper resource="mapper/mybatis-userservice-mapping.xml" />
-	<mapper resource="mapper/mybatis-userservice-mapping01.xml" />
-	<mapper resource="mapper/mybatis-userservice-mapping02.xml" />
-	<mapper resource="mapper/mybatis-userservice-mapping03.xml" />
-	<mapper resource="mapper/mybatis-userservice-mapping05.xml" />
-	<mapper resource="mapper/mybatis-userservice-mapping07.xml" />
-	<mapper resource="mapper/mybatis-userservice-mapping08.xml" />
-	<mapper resource="mapper/mybatis-userservice-mapping10.xml" />
+	<mapper resource="mapper/mybatis-fruits-mapping.xml" />
 </mappers>
 </configuration>
