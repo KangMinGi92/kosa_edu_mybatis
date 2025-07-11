@@ -1,4 +1,4 @@
-package spring05_MyBatis_Fruits;
+package com.service.spring.test;
 
 import java.io.Reader;
 import java.util.List;
@@ -12,7 +12,7 @@ import com.service.spring.domain.Item;
 
 public class MyBatisUnitTest {
 	
-	private static final String NS ="FruitsMapper.";
+	private static final String NS ="ns.sql.FruitMapper.";
 	public static void main(String[] args) throws Exception {
 		Reader reader=Resources.getResourceAsReader("config/SqlMapConfig.xml");
 		SqlSessionFactory factory=new SqlSessionFactoryBuilder().build(reader);
